@@ -97,6 +97,11 @@ function register_teaching_philosophy_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/software-tools-widget.php' );
     $widgets_manager->register( new \Software_Tools_Widget() );
+
+    // new
+    // Load and register the NEW Learning Resources Overview widget
+    require_once( __DIR__ . '/widgets/learning-resources-overview-widget.php' );
+    $widgets_manager->register( new \Learning_Resources_Overview_Widget() );
   
 }
 add_action( 'elementor/widgets/register', 'register_teaching_philosophy_widget' );
