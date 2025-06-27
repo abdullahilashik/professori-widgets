@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       Teaching Philosophy Widget
- * Description:       Adds a custom Teaching Philosophy widget to Elementor.
+ * Plugin Name:       Professori Widgets
+ * Description:       Adds a custom Professori Widgets to Elementor.
  * Version:           1.0.0
- * Author:            Your Name
+ * Author:            Abdullahil Ashik Md Arefin
  * Author URI:        https://yourwebsite.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -102,6 +102,19 @@ function register_teaching_philosophy_widget( $widgets_manager ) {
     // Load and register the NEW Learning Resources Overview widget
     require_once( __DIR__ . '/widgets/learning-resources-overview-widget.php' );
     $widgets_manager->register( new \Learning_Resources_Overview_Widget() );
+    
+    require_once( __DIR__ . '/widgets/lecture-notes-widget.php' );
+    $widgets_manager->register( new \Lecture_Notes_Widget() );
+    
+    require_once( __DIR__ . '/widgets/video-tutorials-widget.php' );
+    $widgets_manager->register( new \Video_Tutorials_Widget() );
+    
+    require_once( __DIR__ . '/widgets/problem-sets-widget.php' );
+    $widgets_manager->register( new \Problem_Sets_Widget() );
+    
+    require_once( __DIR__ . '/widgets/workshops-widget.php' );
+    $widgets_manager->register( new \Workshops_Widget() );
+    
   
 }
 add_action( 'elementor/widgets/register', 'register_teaching_philosophy_widget' );
