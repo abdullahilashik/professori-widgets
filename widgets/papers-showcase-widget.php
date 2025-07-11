@@ -74,12 +74,12 @@ class Papers_Showcase_Widget extends \Elementor\Widget_Base {
         $settings = $this->get_settings_for_display();
         // $paper_categories = get_terms(['taxonomy' => 'paper_category', 'hide_empty' => true, 'orderby' => 'name']);
         $paper_categories = get_terms([
-            'taxonomy'   => 'paper_category',
-            'hide_empty' => true,
-            'meta_key'   => 'category_order', // Tell WordPress to look for our custom field
-            'orderby'    => 'meta_value_num', // Tell WordPress to sort by that field's value, as a number
-            'order'      => 'ASC',              // Sort in ascending order (0, 1, 2, 3...)
-        ]);
+        'taxonomy'   => 'paper_category',
+        'hide_empty' => true,
+        'meta_key'   => 'category_order', // Tell WordPress to look for our custom field
+        'orderby'    => 'meta_value_num', // Tell WordPress to sort by that field's value, as a number
+        'order'      => 'ASC',              // Sort in ascending order (0, 1, 2, 3...)
+    ]);
         
         if ('yes' === $settings['show_category_nav']): ?>
         <!-- Publications Navigation -->
