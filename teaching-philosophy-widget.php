@@ -115,6 +115,9 @@ function register_teaching_philosophy_widget( $widgets_manager ) {
     require_once( __DIR__ . '/widgets/workshops-widget.php' );
     $widgets_manager->register( new \Workshops_Widget() );
     
+    require_once( __DIR__ . '/widgets/papers-showcase-widget.php' );
+    $widgets_manager->register( new \Papers_Showcase_Widget() );
+    
   
 }
 add_action( 'elementor/widgets/register', 'register_teaching_philosophy_widget' );
