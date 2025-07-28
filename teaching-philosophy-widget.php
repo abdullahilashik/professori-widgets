@@ -117,7 +117,40 @@ function register_teaching_philosophy_widget( $widgets_manager ) {
     
     require_once( __DIR__ . '/widgets/papers-showcase-widget.php' );
     $widgets_manager->register( new \Papers_Showcase_Widget() );
+
+
+    // Frontpage
+
+    // Add these four new registrations
+    require_once( __DIR__ . '/widgets/about-me-summary-widget.php' );
+    $widgets_manager->register( new \About_Me_Summary_Widget() );
+
+    require_once( __DIR__ . '/widgets/research-interests-grid-widget.php' );
+    $widgets_manager->register( new \Research_Interests_Grid_Widget() );
+
+    require_once( __DIR__ . '/widgets/selected-publications-widget.php' );
+    $widgets_manager->register( new \Selected_Publications_Widget() );
+    
+    require_once( __DIR__ . '/widgets/contact-info-widget.php' );
+    $widgets_manager->register( new \Contact_Info_Widget() );
+
+    // Add this new registration
+    require_once( __DIR__ . '/widgets/homepage-hero-widget.php' );
+    $widgets_manager->register( new \Homepage_Hero_Widget() );
     
   
 }
 add_action( 'elementor/widgets/register', 'register_teaching_philosophy_widget' );
+
+
+function add_elementor_widget_categories_final( $elements_manager ) {
+    $elements_manager->add_category(
+        'frontpage-widgets', // This is the unique slug for the category
+        [
+            'title' => esc_html__( 'Frontpage Widgets', 'tpw' ), // This is the name you will see in Elementor
+            'icon' => 'eicon-home', // The icon for the category
+        ]
+    );
+}
+add_action( 'elementor/widgets/categories_registered', 'add_elementor_widget_categories_final' );
+
