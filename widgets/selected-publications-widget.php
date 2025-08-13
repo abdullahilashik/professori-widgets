@@ -5,7 +5,10 @@ class Selected_Publications_Widget extends \Elementor\Widget_Base {
     public function get_name() { return 'cpt_selected_publications'; }
     public function get_title() { return esc_html__( 'Homepage: Selected Publications', 'tpw' ); }
     public function get_icon() { return 'eicon-post-list'; }
-    public function get_categories() { return [ 'basic' ]; }
+    // public function get_categories() { return [ 'basic' ]; }
+    public function get_categories() {
+        return [ 'frontpage-widgets' ]; // Use the slug we created in Step 1
+    }
 
     protected function _register_controls() {
         $this->start_controls_section('content_section', ['label' => 'Content']);

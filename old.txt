@@ -157,3 +157,44 @@ function add_elementor_widget_categories_final( $elements_manager ) {
     );
 }
 add_action( 'elementor/widgets/categories_registered', 'add_elementor_widget_categories_final' );
+
+
+// ===================================================================
+// 2. REGISTER ALL ELEMENTOR WIDGETS
+// ===================================================================
+function register_all_academic_widgets_final( $widgets_manager ) {
+    // List of all widget files in the /widgets/ folder
+    $widget_files = [
+        'about-me-summary-widget.php',
+        'research-interests-grid-widget.php',
+        'selected-publications-widget.php',
+        'contact-info-widget.php',
+        'homepage-hero-widget.php',
+        // Add all your other widget files here...
+        'lecture-notes-widget.php',
+        'video-tutorials-widget.php',
+        'problem-sets-widget.php',
+        'workshops-widget.php',
+        // etc.
+    ];
+
+    foreach ( $widget_files as $widget_file ) {
+        $path = __DIR__ . '/widgets/' . $widget_file;
+        if ( file_exists($path) ) {
+            require_once( $path );
+            // Convert file-name-widget.php to FileName_Widget class name
+            $class_name = str_replace( '-', '_', ucwords( basename( $widget_file, '.php' ), '-' ) );
+            if ( class_exists( "\\{$class_name}" ) ) {
+                
+                // ======================================================
+                // THE SYNTAX ERROR FIX IS HERE
+                // The invalid line 'new "\\{$class_name}()"' is replaced
+                // with the correct PHP syntax 'new $class_name()'.
+                // ======================================================
+                $widgets_manager->register( new $class_name() );
+
+            }
+        }
+    }
+}
+add_action( 'elementor/widgets/register', 'register_all_academic_widgets_final' );

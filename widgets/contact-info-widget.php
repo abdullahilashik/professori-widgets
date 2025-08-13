@@ -6,7 +6,10 @@ class Contact_Info_Widget extends \Elementor\Widget_Base {
     public function get_name() { return 'contact_info'; }
     public function get_title() { return esc_html__( 'Homepage: Contact Info', 'tpw' ); }
     public function get_icon() { return 'eicon-map-pin'; }
-    public function get_categories() { return [ 'basic' ]; }
+    // public function get_categories() { return [ 'basic' ]; }
+    public function get_categories() {
+        return [ 'frontpage-widgets' ]; // Use the slug we created in Step 1
+    }
 
     protected function _register_controls() {
         $this->start_controls_section('content_section', ['label' => 'Content']);
