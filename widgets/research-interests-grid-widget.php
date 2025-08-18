@@ -8,7 +8,7 @@ class Research_Interests_Grid_Widget extends \Elementor\Widget_Base {
     public function get_icon() { return 'eicon-info-circle-o'; }
     // public function get_categories() { return [ 'basic' ]; }
     public function get_categories() {
-        return [ 'frontpage-widgets' ]; // Use the slug we created in Step 1
+        return [ 'basic' ]; // Use the slug we created in Step 1
     }
 
     protected function _register_controls() {

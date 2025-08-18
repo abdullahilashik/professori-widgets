@@ -8,7 +8,7 @@ class Homepage_Hero_Widget extends \Elementor\Widget_Base {
     public function get_icon() { return 'eicon-image-box'; }
     
     // Assign this widget to our new custom category
-    public function get_categories() { return [ 'frontpage-widgets' ]; }
+    public function get_categories() { return [ 'basic' ]; }
 
     protected function _register_controls() {
         // --- Content Tab ---

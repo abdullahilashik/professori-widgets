@@ -7,7 +7,7 @@ class Selected_Publications_Widget extends \Elementor\Widget_Base {
     public function get_icon() { return 'eicon-post-list'; }
     // public function get_categories() { return [ 'basic' ]; }
     public function get_categories() {
-        return [ 'frontpage-widgets' ]; // Use the slug we created in Step 1
+        return [ 'basic' ]; // Use the slug we created in Step 1
     }
 
     protected function _register_controls() {
