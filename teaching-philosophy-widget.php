@@ -137,6 +137,19 @@ function register_teaching_philosophy_widget( $widgets_manager ) {
     // Add this new registration
     require_once( __DIR__ . '/widgets/homepage-hero-widget.php' );
     $widgets_manager->register( new \Homepage_Hero_Widget() );
+
+     require_once( __DIR__ . '/widgets/full-contact-page-widget.php' );
+    $widgets_manager->register( new \Full_Contact_Page_Widget() );
+
+    // Add this new registration for the definitive projects widget
+    require_once( __DIR__ . '/widgets/cpt-projects-display-widget.php' );
+    $widgets_manager->register( new \CPT_Projects_Display_Widget() );
+
+    require_once( __DIR__ . '/widgets/single-project-category-widget.php' );
+    $widgets_manager->register( new \Single_Project_Category_Widget() );
+
+     require_once( __DIR__ . '/widgets/single-paper-category-widget.php' );
+    $widgets_manager->register( new \Single_Paper_Category_Widget() );
     
   
 }

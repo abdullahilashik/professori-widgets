@@ -14,7 +14,11 @@ class About_Me_Summary_Widget extends \Elementor\Widget_Base {
     protected function _register_controls() {
         $this->start_controls_section('content_section', ['label' => 'Content']);
         $this->add_control('title', ['label' => 'Title', 'type' => \Elementor\Controls_Manager::TEXT, 'default' => 'About Me']);
-        $this->add_control('about_text', ['label' => 'About Text', 'type' => \Elementor\Controls_Manager::WYSIWYG, 'default' => '<p>I am a Professor...</p>']);
+        $this->add_control('about_text', ['label' => 'About Text', 'type' => \Elementor\Controls_Manager::WYSIWYG, 'default' => '<p>Hello visitor
+
+<p>I am serving as a Professor in the Department of Electrical and Electronic Engineering (EEE) at Bangladesh University of Engineering and Technology (BUET). I earned my PhD degree from Rutgers University in beautiful Piscataway, New Jersey, USA, where I had the opportunity to work with Prof. Anand Sarwate. In this website, you will find information about my teaching, research interests, my CV, links to my papers and links to some tutorials that I wrote about random things. You can also check my Twitter page.</p>
+
+<p>Thank you for visiting my website.</p></p>']);
         $this->add_control('education_title', ['label' => 'Education Box Title', 'type' => \Elementor\Controls_Manager::TEXT, 'default' => 'Education']);
         $this->add_control('education_count', ['label' => 'Number of Education Items to Show', 'type' => \Elementor\Controls_Manager::NUMBER, 'default' => 3]);
         $this->end_controls_section();
